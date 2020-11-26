@@ -81,7 +81,7 @@ Password(){
 	read -p "Enter your Password : " password
 
 	# Regex pattern for valid Mobile Number as 91 1234567890
-	reg_pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+	reg_pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*[#$@!%&*?]).{8,}$"
 
 	if [[ $mobNum =~ $reg_pattern ]]
 	then
