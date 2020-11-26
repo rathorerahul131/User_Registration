@@ -76,6 +76,22 @@ mobileNum(){
 	fi
 }
 
+Password(){
+
+	read -p "Enter your Password : " password
+
+	# Regex pattern for valid Mobile Number as 91 1234567890
+	reg_pattern="^[a-zA-Z0-9]{8,}$ "
+
+	if [[ $mobNum =~ $reg_pattern ]]
+	then
+        	echo "Valid Entry : $password"
+	else
+        	echo "Invaild Entry! Please enter in the format described"
+		Password
+	fi
+}
+
 # function call for First Name
 fName
 
@@ -87,3 +103,6 @@ mailId
 
 #function call for Mobile Number
 mobileNum
+
+#function call for Password
+Password
