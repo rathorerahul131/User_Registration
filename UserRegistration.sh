@@ -4,7 +4,7 @@ echo "Welcome to The User Registration System"
 
 # Function that validates First Name............................
 
-fName(){
+firstName(){
 	
 	read -p "Enter your First Name keeping first letter as capital: " firstName
 
@@ -16,13 +16,13 @@ fName(){
        	echo "Valid Entry : $firstName "
 	else
        	echo "Invalid Entry! Please ensure that first letter of your name is capital"
-	fName
+	firstName
 	fi
 }
 
 # Function that validates Last Name ...............................
 
-lName(){
+lastName(){
 
 	read -p "Enter your Last Name keeping first letter as capital: " lastName
 
@@ -34,7 +34,7 @@ lName(){
        		echo "Valid Entry : $lastName "
 	else
        		echo "Invalid Entry! Please ensure that first letter of your last name is capital"
-		lName
+		lastName
 	fi
 
 	}
@@ -42,7 +42,7 @@ lName(){
 
 # Function that Validates Email....................................
 
-mailId(){
+mail(){
 
 	read -p "Enter your email id in the format as abc.xyz@gmail.co.in : " email
 
@@ -54,7 +54,7 @@ mailId(){
         	echo "Valid Entry: $email"
 	else
        	 	echo "Invalid Entry: Please enter email-id in the proper format "
-		mailId
+		Mail
 	fi
 }
 
@@ -76,33 +76,25 @@ mobileNum(){
 	fi
 }
 
-Password(){
+password(){
 
 	read -p "Enter your Password : " password
 
-	# Regex pattern for valid Mobile Number as 91 1234567890
+	# Regex pattern for valid password with alteat 8 characters, atleast one Upper and lower character , one special character
 	reg_pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*[#$@!%&*?]).{8,}$"
 
-	if [[ $mobNum =~ $reg_pattern ]]
+	if [[ $password =~ $reg_pattern ]]
 	then
         	echo "Valid Entry : $password"
 	else
         	echo "Invaild Entry! Please enter in the format described"
-		Password
+		password
 	fi
 }
 
-# function call for First Name
-fName
-
-# Function Call for Last Name
-lName 
-
-#function call for Mail Address
-mailId
-
-#function call for Mobile Number
+# function calls
+firstName
+lastName 
+mail
 mobileNum
-
-#function call for Password
-Password
+password
